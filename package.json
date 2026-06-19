@@ -1,0 +1,17 @@
+{
+  "name": "thecloudway-skills",
+  "version": "0.0.0-development",
+  "description": "The Cloud Way shared Agent Skills (Cursor + Claude Code).",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheCloudWay/skills.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^24.2.3"
+  }
+}

@@ -1,0 +1,39 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+
+  - repo: local
+    hooks:
+      # Rebuild and stage dist/ whenever src/ changes so the committed bundle
+      # always matches the source.
+      - id: build-dist
+        name: build dist
+        entry: npm run build
+        language: system
+        files: ^src/
+        pass_filenames: false
+        always_run: false
+        stages: [pre-commit]
+
+      - id: stage-dist
+        name: stage dist
+        entry: bash -c 'git add dist'
+        language: system
+        files: ^src/
+        pass_filenames: false
+        stages: [pre-commit]
+
+      # Run the unit tests before committing.
+      - id: unit-tests
+        name: unit tests
+        entry: npm test
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]

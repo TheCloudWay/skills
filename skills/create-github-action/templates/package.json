@@ -1,0 +1,39 @@
+{
+  "name": "{{REPO_NAME}}",
+  "version": "0.0.0-development",
+  "description": "{{ACTION_DESCRIPTION}}",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "test": "node --test",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "github-action",
+    "cor"
+  ],
+  "author": "{{ORG}}",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/{{ORG}}/{{REPO_NAME}}.git"
+  },
+  "bugs": {
+    "url": "https://github.com/{{ORG}}/{{REPO_NAME}}/issues"
+  },
+  "homepage": "https://github.com/{{ORG}}/{{REPO_NAME}}#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@vercel/ncc": "^0.38.3",
+    "semantic-release": "^24.2.3"
+  }
+}

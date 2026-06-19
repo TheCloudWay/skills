@@ -1,0 +1,9 @@
+{
+  "name": "thecloudway-skills",
+  "version": "1.0.0",
+  "description": "The Cloud Way shared Agent Skills.",
+  "author": {
+    "name": "The Cloud Way"
+  },
+  "homepage": "https://github.com/TheCloudWay/skills"
+}

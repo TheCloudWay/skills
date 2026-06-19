@@ -1,0 +1,8 @@
+node_modules/
+
+# Do NOT ignore dist/: the bundle is committed because GitHub runs
+# dist/index.js directly when the action is used (no build step at runtime).
+
+# Logs and OS noise
+*.log
+.DS_Store

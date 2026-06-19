@@ -1,0 +1,26 @@
+version: 2
+updates:
+  # npm dependencies (runtime + build/release).
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      semantic-release:
+        patterns:
+          - "semantic-release"
+          - "@semantic-release/*"
+
+  # Actions used inside the workflows.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: ci
+      include: scope

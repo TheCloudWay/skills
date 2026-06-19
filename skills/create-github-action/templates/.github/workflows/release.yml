@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+      - beta
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          # ACTIONS_TOKEN is an admin PAT (org secret) so semantic-release can
+          # push the chore(release) commit and tags to the protected branches
+          # (it bypasses the ruleset via the admin role). Falls back to the
+          # default token when the secret is not set (no push to protected branches).
+          token: ${{ secrets.ACTIONS_TOKEN || github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN || github.token }}
+        run: npx semantic-release

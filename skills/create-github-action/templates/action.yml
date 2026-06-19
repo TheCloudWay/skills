@@ -1,0 +1,25 @@
+name: '{{ACTION_NAME}}'
+description: '{{ACTION_DESCRIPTION}}'
+author: '{{ORG}}'
+
+branding:
+  icon: 'refresh-cw'
+  color: 'blue'
+
+# Replace the inputs/outputs below with the ones the action actually needs.
+# Secrets (endpoint, token, ...) are passed from org/repo secrets, never hardcoded.
+inputs:
+  example_input:
+    description: 'Describe what this input is for.'
+    required: true
+  optional_input:
+    description: 'An optional input.'
+    required: false
+
+# outputs:
+#   result:
+#     description: 'Describe the output.'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "thecloudway-skills",
+  "description": "The Cloud Way shared Agent Skills.",
+  "metadata": {
+    "description": "The Cloud Way shared Agent Skills."
+  },
+  "owner": {
+    "name": "The Cloud Way",
+    "url": "https://github.com/TheCloudWay"
+  },
+  "plugins": [
+    {
+      "name": "thecloudway-skills",
+      "description": "The Cloud Way Agent Skills: scaffold JavaScript GitHub Actions following solid conventions, and more.",
+      "author": {
+        "name": "The Cloud Way"
+      },
+      "category": "development",
+      "source": "./",
+      "homepage": "https://github.com/TheCloudWay/skills"
+    }
+  ]
+}

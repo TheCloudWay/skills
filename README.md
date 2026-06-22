@@ -44,11 +44,6 @@ The plugin version (`.claude-plugin/plugin.json`) is bumped automatically by
 `feat!`/`BREAKING CHANGE` -> major; `docs`/`chore`/`ci` -> no bump). Do not edit the version by
 hand.
 
-## Articles
-
-- [Build a GitHub Action + the Skill that writes it](articles/) (EN/ES)
-- [Run your own Agent Skills marketplace](articles/) (EN/ES)
-
 ## License
 
 [MIT](LICENSE) - The Cloud Way.
